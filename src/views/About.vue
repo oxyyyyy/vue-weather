@@ -1,5 +1,19 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div>
+    <counterIndicator />
   </div>
 </template>
+
+<script>
+  import counterIndicator from '@/components/counterIndicator.vue';
+
+  export default {
+    components: {
+      counterIndicator
+    }
+  }
+</script>
+
+<style lang="scss" scoped>
+
+</style>
