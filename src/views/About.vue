@@ -1,17 +1,8 @@
 <template>
-  <div>
-    <counterIndicator />
-  </div>
+  <div></div>
 </template>
 
 <script>
-  import counterIndicator from '@/components/counterIndicator.vue';
-
-  export default {
-    components: {
-      counterIndicator
-    }
-  }
 </script>
 
 <style lang="scss" scoped>

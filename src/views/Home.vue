@@ -1,16 +1,30 @@
 <template>
   <div class="home">
-    <incrementBtn></incrementBtn>
+    <weatherWidget />
   </div>
 </template>
 
 <script>
-import incrementBtn from '@/components/incrementBtn.vue';
+import constants from '@/constants.js';
+
+import weatherWidget from '@/components/weatherWidget.vue';
 
 export default {
   name: "home",
   components: {
-    incrementBtn
+    weatherWidget
+  },
+  data() {
+    return {}
   }
-};
+}
 </script>
+
+<style lang="scss" scoped>
+  .home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+</style>
