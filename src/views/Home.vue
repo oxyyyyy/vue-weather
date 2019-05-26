@@ -13,9 +13,6 @@ export default {
   name: "home",
   components: {
     weatherWidget
-  },
-  data() {
-    return {}
   }
 }
 </script>

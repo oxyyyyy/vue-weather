@@ -1,29 +1,25 @@
 <template>
-  <div class="weather-widget">
-    <p class="weather-widget__city">{{ weather.data[0].city_name }}</p>
-    <h2 class="weather-widget__temp">{{ weather.data[0].temp }}</h2>
-    <p class="weather-widget__status">{{ weather.data[0].weather.description }}</p>
+  <div>
+    <div v-if="this.$store.state.dataIsRecived" class="weather-widget">
+      <p class="weather-widget__city">{{ weather.city_name }}</p>
+      <h2 class="weather-widget__temp">{{ weather.temp }}<span>°C</span></h2>
+      <p class="weather-widget__status">{{ weather.weather.description }}</p>
+    </div>
+    <div v-else class="weather-widget">
+      <img src="spinner.svg" alt="">
+    </div>
   </div>
 </template>
 
 <script>
-  import service from '@/services/service.js'
-
   export default {
-    data() {
-      return {
-        weather: {}
+    computed: {
+      weather() {
+        return this.$store.state.weather
       }
     },
     created() {
-      service.getWeather()
-        .then(response => {
-          this.weather = response.data
-          console.log(this.weather)
-        })
-        .catch(error => {
-          console.log('There was an error:', error.response)
-        })
+      this.$store.dispatch("updateWeather");
     }
   }
 </script>
@@ -41,9 +37,17 @@
   }
 
   .weather-widget__temp {
+    display: flex;
+    align-items: flex-start;
     font-size: 200px;
     font-weight: 200;
     margin: 0;
+
+    span {
+      font-size: 30px;
+      font-weight: 400;
+      margin-top: 35px;
+    }
   }
 
   .weather-widget__status {

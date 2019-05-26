@@ -1,16 +1,32 @@
 import Vue from "vue";
 import Vuex from "vuex";
 
+import service from "@/services/service.js";
+
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    count: 0
+    weather: {},
+    dataIsRecived: false
   },
   mutations: {
-    increment(state) {
-      state.count++;
+    UPDATE_WEATHER(state) {
+      service
+        .getWeather()
+        .then(response => {
+          state.weather = response.data.data[0];
+          state.dataIsRecived = true;
+          console.log(response);
+        })
+        .catch(error => {
+          console.log("There was an error:", error.response);
+        });
     }
   },
-  actions: {}
+  actions: {
+    updateWeather(context) {
+      context.commit("UPDATE_WEATHER");
+    }
+  }
 });
