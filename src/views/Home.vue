@@ -5,8 +5,6 @@
 </template>
 
 <script>
-import constants from '@/constants.js';
-
 import weatherWidget from '@/components/weatherWidget.vue';
 
 export default {

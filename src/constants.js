@@ -1,7 +1,4 @@
-const API_KEY = "4d26ea6194e024093ee81cef68d47986";
-const CURRENT_WEATHER = `https://samples.openweathermap.org/data/2.5/weather?q=703448&appid=${API_KEY}`;
+const API_KEY = "b60f3577e8eb46f089853e2a9fd7d744";
+const CURRENT_WEATHER = `https://api.weatherbit.io/v2.0/current?city=Kiev,UA&key=${API_KEY}`;
 
-export default {
-  API_KEY,
-  CURRENT_WEATHER
-};
+export { API_KEY, CURRENT_WEATHER };
