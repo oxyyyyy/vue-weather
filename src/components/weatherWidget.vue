@@ -29,6 +29,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: #429EA6;
   }
 
   .weather-widget__city {
@@ -39,6 +40,7 @@
   .weather-widget__temp {
     display: flex;
     align-items: flex-start;
+    color: #16F4D0;
     font-size: 200px;
     font-weight: 200;
     margin: 0;
