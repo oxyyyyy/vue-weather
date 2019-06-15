@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <p>Thanks <a href="https://openweathermap.org/">OpenWeatherMap</a> for public API!</p>
+    <p>Thanks <a href="https://www.weatherbit.io/">Weatherbit</a> for public API!</p>
   </div>
 </template>
 
