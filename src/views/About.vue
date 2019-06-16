@@ -4,9 +4,6 @@
   </div>
 </template>
 
-<script>
-</script>
-
 <style lang="scss" scoped>
   .about {
     display: flex;
